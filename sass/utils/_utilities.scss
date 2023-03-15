@@ -1,0 +1,42 @@
+/* Background color utility classes */
+// for the card background
+.bg-primary-300 {
+  background-color: hsl(var(--clr-primary-300));
+}
+
+// for the body background
+.bg-primary-400 {
+  background-color: hsl(var(--clr-primary-400));
+}
+
+/* Font color utility classes */
+// for h1 which does not change with theme
+.text-neutral-100 {
+  color: hsl(var(--clr-neutral-100));
+}
+
+// for all text and button/link hover
+.text-primary-100 {
+  color: hsl(var(--clr-primary-100));
+}
+
+// for button/link text
+.text-primary-200 {
+  color: hsl(var(--clr-primary-200));
+}
+
+/* Font size utility classes */
+// for h1
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+// for all text
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+// for small text
+.fs-300 {
+  font-size: var(--fs-300);
+}
