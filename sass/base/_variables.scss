@@ -1,0 +1,18 @@
+:root {
+  // Colors
+  // Neutral Color
+  --clr-neutral-500: 220, 98%, 61%; // for active link/button
+  // Background colors for the linear gradient
+  --clr-lgbgc-1: 192, 100%, 67%;
+  --clr-lgbgc-2: 280, 87%, 65%;
+  // Primary colors for dark themes, by default
+  --clr-primary-100: 60, 14%, 99%; //for button/link hover and all text
+  --clr-primary-200: 238, 14%, 42%; // for button/link text
+  --clr-primary-300: 235, 24%, 19%; // for the card background
+  --clr-primary-400: 240, 20%, 12%; // for the body background
+  // // Primary colors for light themes
+  // --clr-primary-100: 237, 12%, 35%; //for button/link hover and all text
+  // --clr-primary-200: 249, 5%, 74%; // for button/link text
+  // --clr-primary-300: 0, 0%, 100%; // for the card background
+  // --clr-primary-400: 0, 0%, 98%; // for the body background
+}
