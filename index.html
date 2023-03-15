@@ -14,54 +14,55 @@
 </head>
 
 <body>
-  <header>
-    <h1>Todo</h1>
-  </header>
-  <main>
-    <label for="mytextbox">Enter your message:</label>
-    <input type="text" id="mytextbox" name="mytextbox" size="30" maxlength="100">
+  <main class="flex-column">
+    <div class="flex space-between">
+      <h1 class="uppercase ls-300 fw-700">Todo</h1>
+      <button class="button--svg" data-icon="moon">M</button>
+    </div>
+    <label class="sr-only" for="todoTaskTextbox">Enter your todo task:</label>
+    <input class="todo__textbox" type="text" id="mytextbox" name="todoTaskTextbox" size="30" maxlength="100">
 
-    <ul>
-      <!-- Generate unique id for each task -->
-      <li>
-        <input type="checkbox" id="todo-1" name="todo-1" value="todo-1">
-        <label for="todo-1">Todo 1</label>
-        <button>Delete</button>
+    <ul class="todo-list">
+      <!-- Generate unique id for each task, total JS -->
+      <li class="todo-list__item">
+        <input class="item__checkbox" type="checkbox" id="todo-1" name="todo-1">
+        <label class="| " for="todo-1">Todo 1</label>
+        <button class="button--svg" data-icon="delete">D</button>
       </li>
-      <li>
-        <input type="checkbox" id="todo-2" name="todo-2" value="todo-2">
-        <label for="todo-2">Todo 2</label>
-        <button>Delete</button>
+      <li class="todo-list__item">
+        <input class="item__checkbox" type="checkbox" id="todo-2" name="todo-2">
+        <label class="| " for="todo-2">Drink 8 glasses of water</label>
+        <button class="button--svg" data-icon="delete">D</button>
       </li>
-      <li>
-        <input type="checkbox" id="todo-3" name="todo-3" value="todo-3">
-        <label for="todo-3">Todo 3</label>
-        <button>Delete</button>
+      <li class="todo-list__item">
+        <input class="item__checkbox" type="checkbox" id="todo-3" name="todo-3">
+        <label class="| " for="todo-3">Get snacks</label>
+        <button class="button--svg" data-icon="delete">D</button>
       </li>
-      <li>
-        <input type="checkbox" id="todo-4" name="todo-4" value="todo-4">
-        <label for="todo-4">Todo 4</label>
-        <button>Delete</button>
+      <li class="todo-list__item">
+        <input class="item__checkbox" type="checkbox" id="todo-4" name="todo-4">
+        <label class="| " for="todo-4">Go for a walk in the morning</label>
+        <button class="button--svg" data-icon="delete">D</button>
       </li>
-      <li>
-        <input type="checkbox" id="todo-5" name="todo-5" value="todo-5">
-        <label for="todo-5">Todo 5</label>
-        <button>Delete</button>
+      <li class="todo-list__item">
+        <input class="item__checkbox" type="checkbox" id="todo-5" name="todo-5">
+        <label class="| " for="todo-5">Complete the todo app on frontend mentor</label>
+        <button class="button--svg" data-icon="delete">D</button>
       </li>
       <!-- List item for meta-data -->
-      <li>
+      <li class="todo-list__item | flex">
         <!-- Update x dynamically -->
-        <p>x item left</p>
+        <p class="">x item left</p>
         <!-- for desktop only, hide this in mobile layout-->
-        <div>
+        <div class="desktop-only">
           <button>All</button>
           <button>Active</button>
           <button>Completed</button>
         </div>
-        <button>Clear Completed</button>
+        <button class="">Clear Completed</button>
       </li>
     </ul>
-    <div>
+    <div class="mobile-only fs-400">
       <!-- for mobile only, hide this in desktop layout-->
       <button>All</button>
       <button>Active</button>
