@@ -1,36 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/images/favicon-32x32.png">
+  <title>Todo app</title>
 </head>
+
 <body>
+  <header>
+    <h1>Todo app</h1>
+    <img src="./public/images/icon-sun.svg" alt="chenge-them-icon">
+  </header>
+  <main>
+    <label for="mytextbox">Enter your message:</label>
+    <input type="text" id="mytextbox" name="mytextbox" size="30" maxlength="100">
 
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <ul>
+      <!-- Generate unique id for each task -->
+      <li>
+        <input type="checkbox" id="todo-1" name="todo-1" value="todo-1">
+        <label for="todo-1">Todo 1</label>
+        <button>Delete</button>
+      </li>
+      <li>
+        <input type="checkbox" id="todo-2" name="todo-2" value="todo-2">
+        <label for="todo-2">Todo 2</label>
+        <button>Delete</button>
+      </li>
+      <li>
+        <input type="checkbox" id="todo-3" name="todo-3" value="todo-3">
+        <label for="todo-3">Todo 3</label>
+        <button>Delete</button>
+      </li>
+      <li>
+        <input type="checkbox" id="todo-4" name="todo-4" value="todo-4">
+        <label for="todo-4">Todo 4</label>
+        <button>Delete</button>
+      </li>
+      <li>
+        <input type="checkbox" id="todo-5" name="todo-5" value="todo-5">
+        <label for="todo-5">Todo 5</label>
+        <button>Delete</button>
+      </li>
+      <!-- List item for meta-data -->
+      <li>
+        <!-- Update x dynamically -->
+        <p>x item left</p>
+        <!-- for desktop only, hide this in mobile layout-->
+        <div>
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+        <button>Clear Completed</button>
+      </li>
+    </ul>
+    <div>
+      <!-- for mobile only, hide this in desktop layout-->
+      <button>All</button>
+      <button>Active</button>
+      <button>Completed</button>
+    </div>
+  </main>
 </body>
+
 </html>
