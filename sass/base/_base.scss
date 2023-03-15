@@ -1,0 +1,17 @@
+// base/: This folder contains Sass code that defines the base styles for the project,
+//        such as typography, colors, and global variables.
+//        These styles are applied to the entire website.
+@import "base/reset";
+@import "base/variables";
+@import "base/global";
+
+// utils/: This folder contains Sass code for utility classes, such as helper classes for margins, padding, and text alignment.
+//          These classes can be used throughout the website to avoid repeating the same styles in multiple places.
+@import "utils/utilities";
+
+// components/: This folder contains Sass code for individual UI components, such as buttons, forms, and navigation menus.
+//              Each component has its own Sass file, making it easy to find and modify specific styles.
+// button component
+// list item component
+
+// layout/: This folder contains Sass code for the layout of the website, such as the header, footer, and main content.
