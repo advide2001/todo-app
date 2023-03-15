@@ -41,6 +41,23 @@
   font-size: var(--fs-300);
 }
 
+// Other utility classes related to typography
+.ls-300 {
+  letter-spacing: var(--ls-300);
+}
+
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+.fw-400 {
+  font-weight: var(--fw-400);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 // General Utility Classes ----------------------------------------------
 .flex {
   display: flex;
