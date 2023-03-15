@@ -1,7 +1,7 @@
 body {
   // Universal styles
   font-family: var(--ff-primary);
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
   font-weight: var(--fw-400);
   color: hsl(var(--clr-primary-100));
   background-color: hsl(var(--clr-primary-400));
@@ -10,4 +10,13 @@ body {
   background-image: var(--bg-img-mobile);
   background-size: 100% 25%;
   background-repeat: no-repeat;
+
+  // center main on the page
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
 }
