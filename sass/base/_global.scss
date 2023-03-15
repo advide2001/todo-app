@@ -1,0 +1,13 @@
+body {
+  // Universal styles
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  color: hsl(var(--clr-primary-100));
+  background-color: hsl(var(--clr-primary-400));
+
+  // fix bg-image
+  background-image: var(--bg-img-mobile);
+  background-size: 100% 25%;
+  background-repeat: no-repeat;
+}
