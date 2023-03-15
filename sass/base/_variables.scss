@@ -31,4 +31,11 @@
   // font weights
   --fw-700: 700;
   --fw-400: 400;
+
+  // background image url, by default for dark theme
+  --bg-img-mobile: url(./../../public/images/bg-mobile-dark.jpg);
+  --bg-img-desktop: url(./../../public/images/bg-desktop-dark.jpg);
+
+  // --bg-img-mobile: url(./../../public/images/bg-mobile-light.jpg);
+  // --bg-img-desktop: url(./../../public/images/bg-desktop-light.jpg);
 }
