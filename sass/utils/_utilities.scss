@@ -40,3 +40,29 @@
 .fs-300 {
   font-size: var(--fs-300);
 }
+
+// General Utility Classes ----------------------------------------------
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap, 1rem);
+}
+
+// screen reader only class.
+// Does not take it out of the DOM just hides it.
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
