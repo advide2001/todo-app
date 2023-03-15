@@ -1,0 +1,7 @@
+.todo-list > *:not(:last-child) {
+  border-bottom: 1px solid hsl(var(--clr-primary-200));
+}
+.todo-list__item {
+  background-color: hsl(var(--clr-primary-300));
+  padding: 1rem 1.25rem;
+}

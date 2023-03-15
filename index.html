@@ -15,9 +15,8 @@
 
 <body>
   <main class="flex-column">
-    <div class="flex space-between">
-      <h1 class="uppercase ls-300 fw-700">Todo</h1>
-      <button class="button--svg" data-icon="moon">M</button>
+    <div class="flex jc-space-between">
+      <h1 class="uppercase ls-300 fw-700 fs-700">Todo</h1>
     </div>
     <label class="sr-only" for="todoTaskTextbox">Enter your todo task:</label>
     <input class="todo__textbox" type="text" id="mytextbox" name="todoTaskTextbox" size="30" maxlength="100">
@@ -27,30 +26,30 @@
       <li class="todo-list__item">
         <input class="item__checkbox" type="checkbox" id="todo-1" name="todo-1">
         <label class="| " for="todo-1">Todo 1</label>
-        <button class="button--svg" data-icon="delete">D</button>
+        <!-- <button class="button--svg" data-icon="delete">D</button> -->
       </li>
       <li class="todo-list__item">
         <input class="item__checkbox" type="checkbox" id="todo-2" name="todo-2">
         <label class="| " for="todo-2">Drink 8 glasses of water</label>
-        <button class="button--svg" data-icon="delete">D</button>
+        <!-- <button class="button--svg" data-icon="delete">D</button> -->
       </li>
       <li class="todo-list__item">
         <input class="item__checkbox" type="checkbox" id="todo-3" name="todo-3">
         <label class="| " for="todo-3">Get snacks</label>
-        <button class="button--svg" data-icon="delete">D</button>
+        <!-- <button class="button--svg" data-icon="delete">D</button> -->
       </li>
       <li class="todo-list__item">
         <input class="item__checkbox" type="checkbox" id="todo-4" name="todo-4">
         <label class="| " for="todo-4">Go for a walk in the morning</label>
-        <button class="button--svg" data-icon="delete">D</button>
+        <!-- <button class="button--svg" data-icon="delete">D</button> -->
       </li>
       <li class="todo-list__item">
         <input class="item__checkbox" type="checkbox" id="todo-5" name="todo-5">
         <label class="| " for="todo-5">Complete the todo app on frontend mentor</label>
-        <button class="button--svg" data-icon="delete">D</button>
+        <!-- <button class="button--svg" data-icon="delete">D</button> -->
       </li>
       <!-- List item for meta-data -->
-      <li class="todo-list__item | flex">
+      <li class="todo-list__item | flex jc-space-between">
         <!-- Update x dynamically -->
         <p class="">x item left</p>
         <!-- for desktop only, hide this in mobile layout-->
@@ -62,7 +61,7 @@
         <button class="">Clear Completed</button>
       </li>
     </ul>
-    <div class="mobile-only fs-400">
+    <div class="todo-list__item | flex mobile-only fs-400 jc-center">
       <!-- for mobile only, hide this in desktop layout-->
       <button>All</button>
       <button>Active</button>
