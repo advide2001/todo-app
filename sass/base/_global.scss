@@ -16,7 +16,20 @@ body {
   align-items: center;
 }
 
+@media (min-width: 768px) {
+  body {
+    // change bg-img, bg-size and font size
+    background-image: var(--bg-img-desktop);
+    background-size: 100% 33%;
+    font-size: var(--fs-400);
+  }
+}
+
 main {
-  width: min(750px, 90%);
+  width: min(600px, 90%);
   margin: 3rem auto;
+}
+
+.card {
+  --gap: 1.5rem;
 }
