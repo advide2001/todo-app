@@ -44,9 +44,12 @@
   }
 
   &:checked {
-    // Add bg color, add bg image and remove border
-    background-color: hsl(var(--clr-neutral-500));
-    background-image: url(../../public/images/icon-check.svg);
+    background-image: url(../../public/images/icon-check.svg),
+      linear-gradient(
+        to bottom right,
+        hsl(var(--clr-lgbgc-1)),
+        hsl(var(--clr-lgbgc-2))
+      );
     border: none;
     background-position: center;
     background-repeat: no-repeat;
