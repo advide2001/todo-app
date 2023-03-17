@@ -1,7 +1,33 @@
+.todo-list__item {
+  display: flex;
+  align-items: center;
+  background-color: hsl(var(--clr-primary-300));
+  padding: 1rem 1.25rem;
+}
+
 .todo-list > *:not(:last-child) {
   border-bottom: 1px solid hsl(var(--clr-primary-200));
 }
-.todo-list__item {
-  background-color: hsl(var(--clr-primary-300));
-  padding: 1rem 1.25rem;
+
+.item__checkbox {
+  appearance: none;
+  margin-right: 1rem;
+  width: 1.25rem;
+  aspect-ratio: 1/1;
+  border: 1px solid hsl(var(--clr-primary-200));
+  border-radius: 50%;
+
+  &:focus,
+  &:hover {
+    border: 1px solid hsl(var(--clr-neutral-500));
+  }
+
+  &:checked {
+    // Add bg color, add bg image and remove border
+    background-color: hsl(var(--clr-neutral-500));
+    background-image: url(../../public/images/icon-check.svg);
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
