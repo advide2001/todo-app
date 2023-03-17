@@ -70,7 +70,7 @@
 // General Utility Classes ----------------------------------------------
 .flex {
   display: flex;
-  gap: var(--gap, 2rem);
+  gap: var(--gap, 1rem);
 }
 
 .flex-column {
@@ -89,6 +89,10 @@
 
 .jc-center {
   justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
 }
 
 // screen reader only class.

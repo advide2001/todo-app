@@ -22,6 +22,7 @@
 .todo-list__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: hsl(var(--clr-primary-300));
   padding: 1rem 1.25rem;
 }
@@ -31,20 +32,25 @@
 }
 
 .item__checkbox {
+  flex-shrink: 0;
   appearance: none;
-  margin-right: 1rem;
   width: 1.25rem;
   aspect-ratio: 1/1;
-  border: 1px solid hsl(var(--clr-primary-200));
-  border-radius: 50%;
+  border: 2px solid hsl(var(--clr-primary-200));
 
   &:focus,
   &:hover {
-    border: 1px solid hsl(var(--clr-neutral-500));
+    border: 2px solid;
+    border-image: linear-gradient(
+      45deg,
+      hsl(var(--clr-lgbgc-1)),
+      hsl(var(--clr-lgbgc-2))
+    );
+    border-image-slice: 1;
   }
 
   &:checked {
-    background-image: url(../../public/images/icon-check.svg),
+    background-image: url(../../images/icon-check.svg),
       linear-gradient(
         to bottom right,
         hsl(var(--clr-lgbgc-1)),
