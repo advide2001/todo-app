@@ -24,11 +24,18 @@ button {
   aspect-ratio: 1;
   flex-shrink: 0;
 
-  &[data-icon="delete"],
   &[data-icon="delete"] {
     background-image: url(./../../images/icon-cross.svg);
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button__svg {
+    &[data-icon="delete"] {
+      display: none;
+    }
   }
 }
 
