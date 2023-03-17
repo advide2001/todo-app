@@ -58,6 +58,15 @@
   text-transform: uppercase;
 }
 
+// utility classes for border radius
+.br-1 {
+  border-radius: 0.25rem;
+}
+
+.br-2 {
+  border-radius: 0.5rem;
+}
+
 // General Utility Classes ----------------------------------------------
 .flex {
   display: flex;
