@@ -116,3 +116,13 @@
 .mobile-only {
   display: flex;
 }
+
+@media (min-width: 768px) {
+  .desktop-only {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
