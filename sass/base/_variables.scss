@@ -39,3 +39,11 @@
   // --bg-img-mobile: url(./../../images/bg-mobile-light.jpg);
   // --bg-img-desktop: url(./../../images/bg-desktop-light.jpg);
 }
+
+@media (min-width: 768px) {
+  :root {
+    --fs-700: 2.5rem;
+    --fs-400: 1.25rem;
+    --fs-300: 1rem;
+  }
+}
