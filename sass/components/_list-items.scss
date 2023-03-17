@@ -3,6 +3,7 @@
   padding: 1rem 1.25rem;
   border: none;
   color: hsl(var(--clr-primary-100));
+  border-radius: 0.5rem;
 
   &::placeholder {
     color: hsl(var(--clr-primary-100));
@@ -11,6 +12,11 @@
   &:focus {
     outline: none;
   }
+}
+
+.todo-list {
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .todo-list__item {
