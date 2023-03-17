@@ -1,3 +1,18 @@
+.todo__textbox {
+  background-color: hsl(var(--clr-primary-300));
+  padding: 1rem 1.25rem;
+  border: none;
+  color: hsl(var(--clr-primary-100));
+
+  &::placeholder {
+    color: hsl(var(--clr-primary-100));
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .todo-list__item {
   display: flex;
   align-items: center;
