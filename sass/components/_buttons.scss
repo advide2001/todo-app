@@ -8,3 +8,18 @@ button {
   outline: none;
   color: inherit;
 }
+
+.button__primary {
+  &:hover,
+  &:focus {
+    color: hsl(var(--clr-primary-100));
+  }
+  &--active {
+    color: hsl(var(--clr-neutral-500));
+  }
+}
+
+.button-group {
+  background-color: hsl(var(--clr-primary-300));
+  padding: 1rem 1.25rem;
+}
