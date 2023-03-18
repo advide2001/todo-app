@@ -24,3 +24,11 @@ function getLocalStorageData() {
   // Restore from local storage
   state.todotasks = localToddTaskData;
 }
+
+export function getLocalStorageDataWrapper() {
+  getLocalStorageData();
+}
+
+export function setLocalStorageDataWrapper() {
+  setLocalStorageData(state);
+}
