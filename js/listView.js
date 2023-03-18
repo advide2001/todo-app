@@ -53,7 +53,24 @@ class ListView {
     this._todoListElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  // render
+  renderNewTodoTask(task, id) {
+    // Generate markup
+    const markup = this._generateActiveTodoTaskMarkup(task, id);
+    // Add it to the top of the existing list
+    this._todoListElement.insertAdjacentHTML("afterbegin", markup);
+  }
+
+  addHandlerTodoTextbox(handler) {
+    const todoTextbox = document.querySelector(".todo__textbox");
+    todoTextbox.value = "";
+    todoTextbox.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        handler(todoTextbox.value);
+        todoTextbox.value = "";
+      }
+    });
+  }
 }
 
 export default new ListView();

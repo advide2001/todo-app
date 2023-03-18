@@ -3,13 +3,8 @@ export const state = {
   userPrefersTheme: "dark", // default to dark theme
   todotasks: {
     // id: string:{task: string, completed: boolean}
-    1: { task: "Do something for god's sake", completed: true },
-    2: { task: "Drink 8 glasses of water", completed: false },
-    3: { task: "Go for a walk in the sunlight", completed: false },
-    4: { task: "Finish editing images", completed: false },
-    5: { task: "Complete frontned mentor project", completed: false },
   },
-  activetasksCount: 4,
+  activetasksCount: 0,
   activeFilter: "all",
 };
 
@@ -25,10 +20,17 @@ function getLocalStorageData() {
   state.todotasks = localToddTaskData;
 }
 
+// Wrapper functions for getLocalStorageData and setLocalStorageData
 export function getLocalStorageDataWrapper() {
   getLocalStorageData();
 }
-
 export function setLocalStorageDataWrapper() {
   setLocalStorageData(state);
+}
+
+// Add new task to state and save to local storage
+export function addNewTask(task, taskID) {
+  state.todotasks[taskID] = { task: task, completed: false };
+  state.activetasksCount++;
+  setLocalStorageDataWrapper();
 }
