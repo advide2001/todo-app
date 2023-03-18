@@ -24,55 +24,9 @@
       <input class="todo__textbox" type="text" id="mytextbox" name="todoTaskTextbox" size="30" maxlength="100"
         placeholder="add a to-do here...">
       <ul class="todo-list">
-        <li class="todo-list__item">
-          <div class="flex ai-center">
-            <input class="item__checkbox item__checkbox--checked" type="checkbox" id="todo-1" name="todo-1">
-            <label class="item__label item__label--checked" for="todo-1">Do something for god's sake</label>
-          </div>
-          <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
-        </li>
-        <li class="todo-list__item">
-          <div class="flex ai-center">
-            <input class="item__checkbox" type="checkbox" id="todo-2" name="todo-2">
-            <label class="item__label" for="todo-2">Drink 8 glasses of water</label>
-          </div>
-          <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
-        </li>
-        <li class="todo-list__item">
-          <div class="flex ai-center">
-            <input class="item__checkbox" type="checkbox" id="todo-3" name="todo-3">
-            <label class="item__label" for="todo-3">Get snacks</label>
-          </div>
-          <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
-        </li>
-        <li class="todo-list__item">
-          <div class="flex ai-center ">
-            <input class="item__checkbox" type="checkbox" id="todo-4" name="todo-4">
-            <label class="item__label" for="todo-4">Go for a walk in the morning</label>
-          </div>
-          <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
-        </li>
-        <li class="todo-list__item">
-          <div class="flex ai-center">
-            <input class="item__checkbox" type="checkbox" id="todo-5" name="todo-5">
-            <label class="item__label" for="todo-5">Complete the todo app on frontend mentor</label>
-          </div>
-          <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
-        </li>
-        <!-- List item for meta-data -->
-        <li class="button-group | flex text-primary-200 jc-space-between">
-          <!-- Update x dynamically -->
-          <p class="tasks__count">meta data here</p>
-          <!-- for desktop only, hide this in mobile layout-->
-          <div class="desktop-only">
-            <button class="button__primary button__primary--active">All</button>
-            <button class="button__primary">Active</button>
-            <button class="button__primary">Completed</button>
-          </div>
-          <button class="button__primary">Clear Completed</button>
-        </li>
+        <div class="list-items__wrapper"></div>
       </ul>
-      <div class="button-group | flex mobile-only fs-400 text-primary-200 jc-center br-2">
+      <div class="task-button-group button-group | flex mobile-only fs-400 text-primary-200 jc-center br-2">
         <!-- for mobile only, hide this in desktop layout-->
         <button class="button__primary button__primary--active">All</button>
         <button class="button__primary">Active</button>
