@@ -1,6 +1,10 @@
 import * as model from "./model.js";
 import listView from "./listView.js";
 
+function printCurrentState() {
+  console.log(JSON.stringify(model.state, null, 2));
+}
+
 // import uuid v4
 import { v4 as uuidv4 } from "uuid";
 
@@ -14,6 +18,10 @@ const controlTodoTextbox = function (todoTask) {
   listView.renderNewTodoTask(todoTask, taskID);
 };
 
+const controlDeleteTask = function (taskID) {
+  console.log("Deleting task " + taskID);
+};
+
 const init = function () {
   model.getLocalStorageDataWrapper();
   listView.renderAllTodoTasksList(
@@ -21,5 +29,7 @@ const init = function () {
     model.state.activeFilter
   );
   listView.addHandlerTodoTextbox(controlTodoTextbox);
+  listView.addHandlerDeleteTodoTask(controlDeleteTask);
 };
 init();
+printCurrentState();

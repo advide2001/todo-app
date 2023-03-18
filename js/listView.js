@@ -1,5 +1,6 @@
 class ListView {
-  _todoListElement = document.querySelector(".list-items__wrapper");
+  _todoListElement = document.querySelector(".todo-list");
+  _todoListItemsWrapper = document.querySelector(".list-items__wrapper");
   _taskCountElement = document.querySelector(".tasks__count");
 
   // Generate markup for the completed list item
@@ -48,17 +49,17 @@ class ListView {
 
   renderAllTodoTasksList(taskList, activeFilter) {
     // Clear the list
-    this._todoListElement.innerHTML = "";
+    this._todoListItemsWrapper.innerHTML = "";
     // Generate markup
     const markup = this._generateAllTodoTasksList(taskList, activeFilter);
-    this._todoListElement.insertAdjacentHTML("afterbegin", markup);
+    this._todoListItemsWrapper.insertAdjacentHTML("afterbegin", markup);
   }
 
   renderNewTodoTask(task, id) {
     // Generate markup
     const markup = this._generateActiveTodoTaskMarkup(task, id);
     // Add it to the top of the existing list
-    this._todoListElement.insertAdjacentHTML("beforeend", markup);
+    this._todoListItemsWrapper.insertAdjacentHTML("beforeend", markup);
   }
 
   addHandlerTodoTextbox(handler) {
@@ -70,6 +71,15 @@ class ListView {
         handler(todoTextbox.value);
         todoTextbox.value = "";
       }
+    });
+  }
+
+  addHandlerDeleteTodoTask(handler) {
+    this._todoListElement.addEventListener("click", function (e) {
+      const deleteButton = e.target.closest(".delete-button");
+      if (!deleteButton) return;
+      const taskID = deleteButton.closest("li").querySelector("input").id;
+      handler(taskID);
     });
   }
 }
