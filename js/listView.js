@@ -57,7 +57,7 @@ class ListView {
     // Generate markup
     const markup = this._generateActiveTodoTaskMarkup(task, id);
     // Add it to the top of the existing list
-    this._todoListElement.insertAdjacentHTML("afterbegin", markup);
+    this._todoListElement.insertAdjacentHTML("beforeend", markup);
   }
 
   addHandlerTodoTextbox(handler) {
