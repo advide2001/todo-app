@@ -1,6 +1,7 @@
 class ListView {
   _todoListElement = document.querySelector(".list-items__wrapper");
   _taskCountElement = document.querySelector(".tasks__count");
+
   // Generate markup for the completed list item
   _generateCompletedTodoTaskMarkup(task, id) {
     return `
@@ -9,7 +10,7 @@ class ListView {
           <input class="item__checkbox item__checkbox--checked" type="checkbox" id="${id}" name="${id}">
           <label class="item__label item__label--checked" for="${id}">${task}</label>
         </div>
-        <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
+        <button class="delete-button button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
       </li>`;
   }
 
@@ -21,7 +22,7 @@ class ListView {
           <input class="item__checkbox" type="checkbox" id="${id}" name="${id}">
           <label class="item__label" for="${id}">${task}</label>
         </div>
-        <button class="button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
+        <button class="delete-button button__svg" data-icon="delete"><span class="sr-only">Delete Task</span></button>
       </li>`;
   }
 
