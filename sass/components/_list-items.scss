@@ -42,7 +42,7 @@
   }
 }
 
-.list-items__wrapper > *:not(:last-child) {
+.list-items__wrapper > * {
   border-bottom: 1px solid hsl(var(--clr-primary-200));
 }
 
