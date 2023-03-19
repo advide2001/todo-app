@@ -39,7 +39,6 @@ const controlCompleteTodoTask = function (taskID) {
 };
 
 const controlClearCompleted = function () {
-  console.log("Clear completed tasks");
   // Loop throught the todo task and delete the ones that are completed
   Object.entries(model.state.todotasks).forEach(([id, task]) => {
     if (task.completed) {
@@ -47,6 +46,16 @@ const controlClearCompleted = function () {
       listView.deleteTodoTask(id);
     }
   });
+};
+
+const controlFiterTodoTasks = function (filter) {
+  if (filter === model.state.activeFilter) return;
+  listView.renderCurrentFilter(model.state.activeFilter, filter);
+  model.setActiveFilter(filter);
+  listView.renderAllTodoTasksList(
+    model.state.todotasks,
+    model.state.activeFilter
+  );
 };
 
 const init = function () {
@@ -60,6 +69,7 @@ const init = function () {
   listView.addHandlerDeleteTodoTask(controlDeleteTask);
   listView.addHandlerCompleteTodoTask(controlCompleteTodoTask);
   listView.addHandlerClearCompletedTasks(controlClearCompleted);
+  listView.addHandlerFiterTodoTasks(controlFiterTodoTasks);
 };
 
 init();

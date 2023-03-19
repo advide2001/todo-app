@@ -78,6 +78,11 @@ export function setLocalStorageDataWrapper() {
   setActiveTasksCountToLocalStorage();
 }
 
+// function to set the active filter
+export function setActiveFilter(filter) {
+  state.activeFilter = filter;
+}
+
 // Add new task to state and save to local storage
 export function addNewTask(task, taskID) {
   state.todotasks[taskID] = { task: task, completed: false };

@@ -3,6 +3,7 @@ class ListView {
   _todoListItemsWrapper = document.querySelector(".list-items__wrapper");
   _taskCountElement = document.querySelector(".tasks__count");
   _clearCompletedButton = document.querySelector(".clear-completed-button");
+  _filterTasksButton = document.querySelector(".task-button-group");
 
   // Generate markup for the completed list item
   _generateCompletedTodoTaskMarkup(task, id) {
@@ -71,6 +72,17 @@ class ListView {
     this._todoListItemsWrapper.insertAdjacentHTML("beforeend", markup);
   }
 
+  renderCurrentFilter(prevFilter, activeFilter) {
+    // Remove the active class from the previous filter
+    document
+      .querySelector(`[data-filter="${prevFilter}"]`)
+      .classList.remove("button__primary--active");
+    // Add the active class to the current filter
+    document
+      .querySelector(`[data-filter="${activeFilter}"]`)
+      .classList.add("button__primary--active");
+  }
+
   deleteTodoTask(taskID) {
     // Get the task element and then remove it from the DOM
     const todoTask = document.getElementById(taskID);
@@ -117,6 +129,15 @@ class ListView {
   addHandlerClearCompletedTasks(handler) {
     this._clearCompletedButton.addEventListener("click", function (e) {
       handler();
+    });
+  }
+
+  addHandlerFiterTodoTasks(handler) {
+    this._filterTasksButton.addEventListener("click", function (e) {
+      const filterButton = e.target.closest(".button__primary");
+      if (!filterButton) return;
+      const activeFilter = filterButton.dataset.filter;
+      handler(activeFilter);
     });
   }
 }
