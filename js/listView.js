@@ -76,6 +76,13 @@ class ListView {
     todoTask.closest("li").remove();
   }
 
+  toggleCompleteTask(taskID) {
+    // Get the task element and then toggle the completed class
+    const todoTask = document.getElementById(taskID);
+    todoTask.classList.toggle("item__checkbox--checked");
+    todoTask.nextElementSibling.classList.toggle("item__label--checked");
+  }
+
   addHandlerTodoTextbox(handler) {
     const todoTextbox = document.querySelector(".todo__textbox");
     todoTextbox.value = "";
@@ -93,6 +100,15 @@ class ListView {
       const deleteButton = e.target.closest(".delete-button");
       if (!deleteButton) return;
       const taskID = deleteButton.closest("li").querySelector("input").id;
+      handler(taskID);
+    });
+  }
+
+  addHandlerCompleteTodoTask(handler) {
+    this._todoListElement.addEventListener("click", function (e) {
+      const checkbox = e.target.closest(".item__checkbox");
+      if (!checkbox) return;
+      const taskID = checkbox.id;
       handler(taskID);
     });
   }

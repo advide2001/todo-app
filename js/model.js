@@ -90,3 +90,8 @@ export function deleteTask(taskID) {
   state.activeTasksCount--;
   setLocalStorageDataWrapper();
 }
+
+export function completeTask(taskID) {
+  state.todotasks[taskID].completed = !state.todotasks[taskID].completed;
+  setLocalStorageDataWrapper();
+}

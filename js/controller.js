@@ -28,6 +28,15 @@ const controlDeleteTask = function (taskID) {
   listView.renderTaskCount(model.state.activeTasksCount);
 };
 
+const controlCompleteTodoTask = function (taskID) {
+  // 1. Update the state in model.js
+  model.completeTask(taskID);
+  // 2. toggle class on the list item to show change
+  listView.toggleCompleteTask(taskID);
+  // 3. Update the active tasks count in listView.js
+  listView.renderTaskCount(model.state.activeTasksCount);
+};
+
 const init = function () {
   model.getLocalStorageDataWrapper();
   listView.renderAllTodoTasksList(
@@ -37,6 +46,7 @@ const init = function () {
   listView.renderTaskCount(model.state.activeTasksCount);
   listView.addHandlerTodoTextbox(controlTodoTextbox);
   listView.addHandlerDeleteTodoTask(controlDeleteTask);
+  listView.addHandlerCompleteTodoTask(controlCompleteTodoTask);
 };
 
 init();
@@ -47,3 +57,9 @@ printCurrentState();
 //   localStorage.clear();
 // }
 // reset();
+
+// complete tasks functionality
+
+// 3. Update the state
+// 4. Update the local storage
+// 5. toggle class on the list item to show change
