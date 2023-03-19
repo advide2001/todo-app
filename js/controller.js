@@ -16,6 +16,7 @@ const controlTodoTextbox = function (todoTask) {
   /*   3. Render this task only in the list in listView.js,
   instead of rerendering the entire list */
   listView.renderNewTodoTask(todoTask, taskID);
+  // 4. Update the active tasks count in listView.js
 };
 
 const controlDeleteTask = function (taskID) {
@@ -23,6 +24,8 @@ const controlDeleteTask = function (taskID) {
   model.deleteTask(taskID);
   // 2. Delete task from list in listView.js
   listView.deleteTodoTask(taskID);
+  // 3. Update the active tasks count in listView.js
+  listView.renderTaskCount(model.state.activeTasksCount);
 };
 
 const init = function () {
@@ -31,6 +34,7 @@ const init = function () {
     model.state.todotasks,
     model.state.activeFilter
   );
+  listView.renderTaskCount(model.state.activeTasksCount);
   listView.addHandlerTodoTextbox(controlTodoTextbox);
   listView.addHandlerDeleteTodoTask(controlDeleteTask);
 };

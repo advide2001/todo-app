@@ -47,6 +47,14 @@ class ListView {
     if (activeFilter === "completed") return completedTasksMarkup;
   }
 
+  renderTaskCount(activeTasksCount) {
+    let markup = "";
+    if (activeTasksCount === 0) markup = `No tasks left`;
+    if (activeTasksCount === 1) markup = `${activeTasksCount} task left`;
+    if (activeTasksCount > 1) markup = `${activeTasksCount} tasks left`;
+    this._taskCountElement.innerHTML = markup;
+  }
+
   renderAllTodoTasksList(taskList, activeFilter) {
     // Clear the list
     this._todoListItemsWrapper.innerHTML = "";
