@@ -52,6 +52,7 @@
   width: 1.5rem;
   aspect-ratio: 1/1;
   border: 2px solid hsl(var(--clr-primary-200));
+  cursor: pointer;
 
   &:focus,
   &:hover {
@@ -78,6 +79,7 @@
 }
 
 .item__label {
+  cursor: pointer;
   &--checked {
     text-decoration: line-through;
     color: hsl(var(--clr-primary-200));
