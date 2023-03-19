@@ -2,6 +2,7 @@ class ListView {
   _todoListElement = document.querySelector(".todo-list");
   _todoListItemsWrapper = document.querySelector(".list-items__wrapper");
   _taskCountElement = document.querySelector(".tasks__count");
+  _clearCompletedButton = document.querySelector(".clear-completed-button");
 
   // Generate markup for the completed list item
   _generateCompletedTodoTaskMarkup(task, id) {
@@ -110,6 +111,12 @@ class ListView {
       if (!checkbox) return;
       const taskID = checkbox.id;
       handler(taskID);
+    });
+  }
+
+  addHandlerClearCompletedTasks(handler) {
+    this._clearCompletedButton.addEventListener("click", function (e) {
+      handler();
     });
   }
 }

@@ -17,6 +17,7 @@ const controlTodoTextbox = function (todoTask) {
   instead of rerendering the entire list */
   listView.renderNewTodoTask(todoTask, taskID);
   // 4. Update the active tasks count in listView.js
+  listView.renderTaskCount(model.state.activeTasksCount);
 };
 
 const controlDeleteTask = function (taskID) {
@@ -37,6 +38,17 @@ const controlCompleteTodoTask = function (taskID) {
   listView.renderTaskCount(model.state.activeTasksCount);
 };
 
+const controlClearCompleted = function () {
+  console.log("Clear completed tasks");
+  // Loop throught the todo task and delete the ones that are completed
+  Object.entries(model.state.todotasks).forEach(([id, task]) => {
+    if (task.completed) {
+      model.deleteTask(id);
+      listView.deleteTodoTask(id);
+    }
+  });
+};
+
 const init = function () {
   model.getLocalStorageDataWrapper();
   listView.renderAllTodoTasksList(
@@ -47,6 +59,7 @@ const init = function () {
   listView.addHandlerTodoTextbox(controlTodoTextbox);
   listView.addHandlerDeleteTodoTask(controlDeleteTask);
   listView.addHandlerCompleteTodoTask(controlCompleteTodoTask);
+  listView.addHandlerClearCompletedTasks(controlClearCompleted);
 };
 
 init();
