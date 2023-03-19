@@ -4,33 +4,89 @@ export const state = {
   todotasks: {
     // id: string:{task: string, completed: boolean}
   },
-  activetasksCount: 0,
+  activeTasksCount: 0,
   activeFilter: "all",
 };
 
-function setLocalStorageData(state) {
-  localStorage.setItem("todoTasks", JSON.stringify(state.todotasks));
+// function setLocalStorageData(state) {
+//   localStorage.setItem("todoTasks", JSON.stringify(state.todotasks));
+//   localStorage.setItem(
+//     "activeTasksCount",
+//     JSON.stringify(state.activeTasksCount)
+//   );
+// }
+
+// function getLocalStorageData() {
+//   const localTodoTaskData = JSON.parse(localStorage.getItem("todoTasks"));
+//   const localActiveTasksCount = JSON.parse(
+//     localStorage.getItem(localActiveTasksCount)
+//   );
+
+//   // Guard caluse if local storage is empty
+//   if (!localTodoTaskData) return;
+//   if (!localActiveTasksCount) return;
+
+//   // Restore from local storage
+//   state.todotasks = localTodoTaskData;
+//   state.activeTasksCount = localActiveTasksCount;
+// }
+
+// function to get the todo tasks from local storage
+function getTodoTasksFromLocalStorage() {
+  const localTodoTaskData = JSON.parse(localStorage.getItem("localTodoTasks"));
+
+  // Guard caluse if local storage is empty
+  if (!localTodoTaskData) return;
+
+  // store data from local storage to state
+  state.todotasks = localTodoTaskData;
 }
 
-function getLocalStorageData() {
-  const localToddTaskData = JSON.parse(localStorage.getItem("todoTasks"));
+// fuction to set the todo tasks to local storage
+function setTodoTasksToLocalStorage() {
+  localStorage.setItem("localTodoTasks", JSON.stringify(state.todotasks));
+}
+
+// function to set the number active tasks count to local storage
+function setActiveTasksCountToLocalStorage() {
+  localStorage.setItem(
+    "localActiveTasksCount",
+    JSON.stringify(state.activeTasksCount)
+  );
+}
+
+// function to get the number active tasks count from local storage
+function getActiveTasksCountFromLocalStorage() {
+  const localActiveTasksCount = JSON.parse(
+    localStorage.getItem("localActiveTasksCount")
+  );
+
   // Guard caluse if local storage is empty
-  if (!localToddTaskData) return;
-  // Restore from local storage
-  state.todotasks = localToddTaskData;
+  if (!localActiveTasksCount) return;
+
+  // store data from local storage to state
+  state.activeTasksCount = localActiveTasksCount;
 }
 
 // Wrapper functions for getLocalStorageData and setLocalStorageData
 export function getLocalStorageDataWrapper() {
-  getLocalStorageData();
+  getTodoTasksFromLocalStorage();
+  getActiveTasksCountFromLocalStorage();
 }
 export function setLocalStorageDataWrapper() {
-  setLocalStorageData(state);
+  setTodoTasksToLocalStorage();
+  setActiveTasksCountToLocalStorage();
 }
 
 // Add new task to state and save to local storage
 export function addNewTask(task, taskID) {
   state.todotasks[taskID] = { task: task, completed: false };
-  state.activetasksCount++;
+  state.activeTasksCount++;
+  setLocalStorageDataWrapper();
+}
+
+export function deleteTask(taskID) {
+  delete state.todotasks[taskID];
+  state.activeTasksCount--;
   setLocalStorageDataWrapper();
 }

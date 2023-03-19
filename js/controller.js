@@ -19,7 +19,10 @@ const controlTodoTextbox = function (todoTask) {
 };
 
 const controlDeleteTask = function (taskID) {
-  console.log("Deleting task " + taskID);
+  // 1. Delete task from state in model.js and save to local storage in model.js
+  model.deleteTask(taskID);
+  // 2. Delete task from list in listView.js
+  listView.deleteTodoTask(taskID);
 };
 
 const init = function () {
@@ -31,5 +34,12 @@ const init = function () {
   listView.addHandlerTodoTextbox(controlTodoTextbox);
   listView.addHandlerDeleteTodoTask(controlDeleteTask);
 };
+
 init();
 printCurrentState();
+
+// !! This is to clear the local storage, do not use in production !!
+// function reset() {
+//   localStorage.clear();
+// }
+// reset();

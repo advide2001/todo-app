@@ -62,6 +62,12 @@ class ListView {
     this._todoListItemsWrapper.insertAdjacentHTML("beforeend", markup);
   }
 
+  deleteTodoTask(taskID) {
+    // Get the task element and then remove it from the DOM
+    const todoTask = document.getElementById(taskID);
+    todoTask.closest("li").remove();
+  }
+
   addHandlerTodoTextbox(handler) {
     const todoTextbox = document.querySelector(".todo__textbox");
     todoTextbox.value = "";
