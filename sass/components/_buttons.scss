@@ -50,6 +50,11 @@ button {
   padding: 1rem 1.25rem;
 }
 
+.theme-toggle-button {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .button-group {
     font-size: var(--fs-300);

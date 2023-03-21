@@ -62,16 +62,14 @@ const controlThemeToggle = function () {
   console.log("Theme toggle"); // delete later
   // 1. Toggle the theme in the state in model.js
   model.toggleTheme();
-  // 2. change colorVariables
-  listView.changeColorVariables();
-  // 3. change the bgimg variables
-  listView.changeBgImgVariables();
-  // 4. change the svg-icon variables
-  listView.changeSvgIconVariables();
+  // 2. switch the variables in :root
+  listView.switchVariableInRoot(model.state.userPrefersTheme);
+  printCurrentState();
 };
 
 const init = function () {
   model.getLocalStorageDataWrapper();
+  listView.switchVariableInRoot(model.state.userPrefersTheme);
   listView.renderAllTodoTasksList(
     model.state.todotasks,
     model.state.activeFilter

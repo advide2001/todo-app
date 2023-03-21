@@ -50,6 +50,98 @@ class ListView {
     if (activeFilter === "completed") return completedTasksMarkup;
   }
 
+  // Auxiliary function to switch the color variables
+  _useLightColors() {
+    document.documentElement.style.setProperty(
+      "--clr-primary-100",
+      "237, 12%, 35%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-200",
+      "249, 5%, 74%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-300",
+      "0, 0%, 100%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-400",
+      "0, 0%, 98%"
+    );
+  }
+  _useDarkColors() {
+    document.documentElement.style.setProperty(
+      "--clr-primary-100",
+      "60, 14%, 99%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-200",
+      "238, 14%, 42%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-300",
+      "235, 24%, 19%"
+    );
+    document.documentElement.style.setProperty(
+      "--clr-primary-400",
+      "240, 20%, 12%"
+    );
+  }
+
+  // // Theme toggle svg icon for dark theme
+  // --theme-toggle-icon: url(./../../images/icon-sun.svg);
+  // // --theme-toggle-icon: url(./../../images/icon-moon.svg);
+
+  // Auxiliary function to switch the bg img variables
+  _useLightBgImg() {
+    document.documentElement.style.setProperty(
+      "--bg-img-mobile",
+      "url(./../../images/bg-mobile-light.jpg)"
+    );
+    document.documentElement.style.setProperty(
+      "--bg-img-desktop",
+      "url(./../../images/bg-desktop-light.jpg)"
+    );
+  }
+  _useDarkBgImg() {
+    document.documentElement.style.setProperty(
+      "--bg-img-mobile",
+      "url(./../../images/bg-mobile-dark.jpg)"
+    );
+    document.documentElement.style.setProperty(
+      "--bg-img-desktop",
+      "url(./../../images/bg-desktop-dark.jpg)"
+    );
+  }
+  // Auxiliary function to switch the svg icon variables
+  _useLightSvgIcons() {
+    document.documentElement.style.setProperty(
+      "--theme-toggle-icon",
+      "url(./../../images/icon-moon.svg)"
+    );
+  }
+  _useDarkSvgIcons() {
+    document.documentElement.style.setProperty(
+      "--theme-toggle-icon",
+      "url(./../../images/icon-sun.svg)"
+    );
+  }
+
+  // Function to modify the variables in root element of the css
+  switchVariableInRoot(userPrefersTheme) {
+    // delete later
+    if (userPrefersTheme === "light") {
+      this._useLightColors();
+      this._useLightBgImg();
+      this._useLightSvgIcons();
+    }
+    if (userPrefersTheme === "dark") {
+      this._useDarkColors();
+      this._useDarkBgImg();
+      this._useDarkSvgIcons();
+    }
+  }
+
   renderTaskCount(activeTasksCount) {
     let markup = "";
     if (activeTasksCount === 0) markup = `No tasks left`;
