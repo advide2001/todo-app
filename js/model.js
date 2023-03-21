@@ -8,29 +8,6 @@ export const state = {
   activeFilter: "all",
 };
 
-// function setLocalStorageData(state) {
-//   localStorage.setItem("todoTasks", JSON.stringify(state.todotasks));
-//   localStorage.setItem(
-//     "activeTasksCount",
-//     JSON.stringify(state.activeTasksCount)
-//   );
-// }
-
-// function getLocalStorageData() {
-//   const localTodoTaskData = JSON.parse(localStorage.getItem("todoTasks"));
-//   const localActiveTasksCount = JSON.parse(
-//     localStorage.getItem(localActiveTasksCount)
-//   );
-
-//   // Guard caluse if local storage is empty
-//   if (!localTodoTaskData) return;
-//   if (!localActiveTasksCount) return;
-
-//   // Restore from local storage
-//   state.todotasks = localTodoTaskData;
-//   state.activeTasksCount = localActiveTasksCount;
-// }
-
 // function to get the todo tasks from local storage
 function getTodoTasksFromLocalStorage() {
   const localTodoTaskData = JSON.parse(localStorage.getItem("localTodoTasks"));

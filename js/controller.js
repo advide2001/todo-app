@@ -83,10 +83,6 @@ printCurrentState();
 
 // Future Objectives
 /* 
-  1. Add a theme changer switch to switch between light and dark mode
-    1.1. Add a feature to save and fetch the user-preferred theme from local storage 
-*/
-/* 
   2. Add a feature to change the order of the todo tasks by dragging and dropping
     2.1 Add a feature to save and fetch the user-preferred order of the todo tasks from local storage
 */
