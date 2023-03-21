@@ -4,6 +4,7 @@ class ListView {
   _taskCountElement = document.querySelector(".tasks__count");
   _clearCompletedButton = document.querySelector(".clear-completed-button");
   _filterTasksButton = document.querySelector(".task-button-group");
+  _toggleThemeButton = document.querySelector(".theme-toggle-button");
 
   // Generate markup for the completed list item
   _generateCompletedTodoTaskMarkup(task, id) {
@@ -138,6 +139,12 @@ class ListView {
       if (!filterButton) return;
       const activeFilter = filterButton.dataset.filter;
       handler(activeFilter);
+    });
+  }
+
+  addHandlerToggleTheme(handler) {
+    this._toggleThemeButton.addEventListener("click", function (e) {
+      handler();
     });
   }
 }

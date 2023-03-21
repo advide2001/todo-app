@@ -45,14 +45,37 @@ function getActiveTasksCountFromLocalStorage() {
   state.activeTasksCount = localActiveTasksCount;
 }
 
+// function to store userPreferedTheme to local storage
+function setUserPreferedThemeToLocalStorage() {
+  localStorage.setItem(
+    "localUserPrefersTheme",
+    JSON.stringify(state.userPrefersTheme)
+  );
+}
+
+// function to get the userPreferedTheme from local storage
+function getUserPreferedThemeFromLocalStorage() {
+  const localUserPreferedTheme = JSON.parse(
+    // get the data from local storage
+    localStorage.getItem("localUserPrefersTheme")
+  );
+  // Guard caluse if local storage is empty
+  if (!localUserPreferedTheme) return;
+
+  // store data from local storage to state
+  state.userPrefersTheme = localUserPreferedTheme;
+}
+
 // Wrapper functions for getLocalStorageData and setLocalStorageData
 export function getLocalStorageDataWrapper() {
   getTodoTasksFromLocalStorage();
   getActiveTasksCountFromLocalStorage();
+  getUserPreferedThemeFromLocalStorage();
 }
 export function setLocalStorageDataWrapper() {
   setTodoTasksToLocalStorage();
   setActiveTasksCountToLocalStorage();
+  setUserPreferedThemeToLocalStorage();
 }
 
 // function to set the active filter
@@ -75,5 +98,10 @@ export function deleteTask(taskID) {
 
 export function completeTask(taskID) {
   state.todotasks[taskID].completed = !state.todotasks[taskID].completed;
+  setLocalStorageDataWrapper();
+}
+
+export function toggleTheme() {
+  state.userPrefersTheme = state.userPrefersTheme === "dark" ? "light" : "dark";
   setLocalStorageDataWrapper();
 }

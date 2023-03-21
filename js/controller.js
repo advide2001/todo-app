@@ -58,6 +58,18 @@ const controlFiterTodoTasks = function (filter) {
   );
 };
 
+const controlThemeToggle = function () {
+  console.log("Theme toggle"); // delete later
+  // 1. Toggle the theme in the state in model.js
+  model.toggleTheme();
+  // 2. change colorVariables
+  listView.changeColorVariables();
+  // 3. change the bgimg variables
+  listView.changeBgImgVariables();
+  // 4. change the svg-icon variables
+  listView.changeSvgIconVariables();
+};
+
 const init = function () {
   model.getLocalStorageDataWrapper();
   listView.renderAllTodoTasksList(
@@ -70,6 +82,7 @@ const init = function () {
   listView.addHandlerCompleteTodoTask(controlCompleteTodoTask);
   listView.addHandlerClearCompletedTasks(controlClearCompleted);
   listView.addHandlerFiterTodoTasks(controlFiterTodoTasks);
+  listView.addHandlerToggleTheme(controlThemeToggle);
 };
 
 init();
