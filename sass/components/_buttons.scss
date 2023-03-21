@@ -29,6 +29,12 @@ button {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  &[data-icon="sun-moon"] {
+    background-image: url(./../../images/icon-sun.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 @media screen and (min-width: 768px) {
