@@ -38,6 +38,10 @@
 
   // --bg-img-mobile: url(./../../images/bg-mobile-light.jpg);
   // --bg-img-desktop: url(./../../images/bg-desktop-light.jpg);
+
+  // Theme toggle svg icon for dark theme
+  --theme-toggle-icon: url(./../../images/icon-sun.svg);
+  // --theme-toggle-icon: url(./../../images/icon-moon.svg);
 }
 
 @media (min-width: 768px) {

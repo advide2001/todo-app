@@ -30,8 +30,8 @@ button {
     background-position: center;
   }
 
-  &[data-icon="sun-moon"] {
-    background-image: url(./../../images/icon-sun.svg);
+  &[data-icon="theme-icon"] {
+    background-image: var(--theme-toggle-icon);
     background-repeat: no-repeat;
     background-position: center;
   }
