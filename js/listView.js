@@ -88,10 +88,6 @@ class ListView {
     );
   }
 
-  // // Theme toggle svg icon for dark theme
-  // --theme-toggle-icon: url(./../../images/icon-sun.svg);
-  // // --theme-toggle-icon: url(./../../images/icon-moon.svg);
-
   // Auxiliary function to switch the bg img variables
   _useLightBgImg() {
     document.documentElement.style.setProperty(

@@ -93,6 +93,7 @@ printCurrentState();
 // reset();
 
 // Future Objectives
+
 /* 
   2. Add a feature to change the order of the todo tasks by dragging and dropping
     2.1 Add a feature to save and fetch the user-preferred order of the todo tasks from local storage
