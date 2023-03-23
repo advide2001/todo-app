@@ -90,6 +90,12 @@ We provide templates to help you share your solution once you've submitted it on
 
 The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
 
+## Future work
+
+Add a feature to order the tasks according to data or priorities
+Implement drag and drop functionality to reorder the tasks and save the changes
+Add a feature that opens a modal window to edit ot delete a task
+
 ## Got feedback for us?
 
 We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.

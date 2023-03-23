@@ -91,17 +91,3 @@ printCurrentState();
 //   localStorage.clear();
 // }
 // reset();
-
-// Future Objectives
-
-/* 
-  2. Add a feature to change the order of the todo tasks by dragging and dropping
-    2.1 Add a feature to save and fetch the user-preferred order of the todo tasks from local storage
-*/
-/* 
-  3. Add a feature to edit the todo task, by opening a modal
-    3.1 Open a modal with textbox prefilled with the current todo task
-    3.2 Add a save button to save the changes
-    3.3 Add a cancel button to close the modal without saving the changes
-    3.4 Add a delete button to delete the todo entirely
-*/
